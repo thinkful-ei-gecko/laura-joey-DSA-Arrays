@@ -6,6 +6,21 @@ function fixBlanks(string){
 }
 // console.log(fixBlanks('in the garden'));
 
+function fixBlanks2(string){
+  let newstring = '';
+  for(let i=0; i<string.length; i++){
+    if(string[i] === ' '){
+      newstring += '%20';
+    }
+    else if(string[i] !== ' '){
+      newstring += string[i];
+    }
+  }
+  return newstring;
+}
+console.log(fixBlanks2('no blanks here'));
+
+
 
 function filterArray(array){
   let newArray = [];
@@ -91,6 +106,5 @@ function products(arr){
 // console.log(products(arr));
 
 function stringRotation(str1,str2){
-  
-
+  console.log(str1, str2);
 }
