@@ -1,4 +1,4 @@
-//Q5 URLify a string
+//QUESTION 5 URLify a string
 
 function fixBlanks(string){
   let newString = string.split(' ').join('%20');
@@ -21,21 +21,18 @@ function fixBlanks2(string){
 console.log(fixBlanks2('no blanks here'));
 
 
-
+//QUESTION 6 Filtering an array
 function filterArray(array){
   let newArray = [];
-  let item;
-
   for(let i=0; i<array.length; i++){
-    if(array[i]<5){
-      item = array.slice(i, 1);
+    if(array[i]>=5){
+      newArray.push(array[i]);
     }
-    newArray.push(item);
-
-    return newArray;
   }
+  return newArray;
 }
-const arr = [8, 3, 7, 6];
+console.log(filterArray([8,2,9,4,11,3,1,7]));
+
 
 function filter(arr, filterFunc) {
   const filterArr = []; 
@@ -47,12 +44,12 @@ function filter(arr, filterFunc) {
   }    
   return filterArr;
 }
-
-
+const arr = [8, 3, 7, 6];
 const lessThanFive = filter(arr, num => num > 4);
-
 // console.log(lessThanFive);
 
+
+//QUESTION 7 Maximum sum
 function arrSum(arr){
   let sum = 0;
   for(let i=0; i<arr.length; i++) {
