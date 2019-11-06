@@ -50,6 +50,7 @@ const lessThanFive = filter(arr, num => num > 4);
 
 
 //QUESTION 7 Maximum sum
+//this version finds the highest sum of any two adjacent array items
 function arrSum(arr){
   let sum = 0;
   for(let i=0; i<arr.length; i++) {
@@ -57,15 +58,14 @@ function arrSum(arr){
     if(newSum > sum){
       sum = newSum;
     }
-
   }
   return sum;
 }
-// console.log(arrSum(arr));
+// console.log(arrSum([6,21,4,9,8,5,19,9,2]));
 
 
-let arr1 = [1, 3, 6, 8, 11];
-let arr2 = [2, 3, 5, 8, 9, 10];
+//QUESTION 8 Merge arrays
+
 function merge(arr1, arr2){
   let newArr = arr1.concat(arr2);
   newArr.sort((a, b) => {  
@@ -73,8 +73,13 @@ function merge(arr1, arr2){
   });
   return newArr;
 }
+let arr1 = [1, 3, 6, 8, 11];
+let arr2 = [2, 3, 5, 8, 9, 10];
 // console.log(merge(arr1, arr2));
-function remove(string){
+
+
+//QUESTION 9 Remove characters
+function removeChars(string){
   // const vowels = ('a' || 'e');
   
   // let newString = '';
@@ -85,23 +90,30 @@ function remove(string){
   // }
   let newString = string.replace(/a/g, '').replace(/e/g, '').replace(/i/g, '').replace(/o/g, '').replace(/u/g, '');
   return newString;
-  
-
 }
-// console.log(remove('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
+// console.log(removeChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
 
+
+//QUESTION 10 Products
 function products(arr){
   let newArr =[];
   for(let i = 0; i < arr.length; i++){
     let tempArr = arr.filter(item => item !== arr[i]);
-    let product = tempArr[0]*tempArr[1]*tempArr[2];
+    let product = 1;
+    for(let j=0; j<tempArr.length; j++){
+      product = product * tempArr[j];
+    }  
     newArr.push(product);
-  
-  }
+  }  
   return newArr;
 }
-// console.log(products(arr));
+console.log(products([1,2,3,4,5]));
 
+
+//QUESTION 11 2D Array
+
+
+//QUESTION 12 String Rotation
 function stringRotation(str1,str2){
   console.log(str1, str2);
 }
