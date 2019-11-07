@@ -78,16 +78,44 @@ let arr2 = [2, 3, 5, 8, 9, 10];
 // console.log(merge(arr1, arr2));
 
 
+function merge_arrays(arr1, arr2) {
+  let idx1 = 0, idx2 = 0;
+  let ret = [];
+  while (idx1 < arr1.length && idx2 < arr2.length) {
+    if (arr1[idx1] <= arr2[idx2])
+      ret.push(arr1[idx1++]);
+    else
+      ret.push(arr2[idx2++]);
+  }
+  // One array is now empty. Join the rest of the other array on.
+  if (idx2 < arr2.length) {
+    idx1 = idx2;
+    arr1 = arr2;
+  }
+  while (idx1 < arr1.length) 
+    ret.push(arr1[idx1++]);
+  return ret;
+}
+let a1 = [2, 5, 6, 7, 8, 11, 13, 14];
+let a2 = [3, 5, 7, 9, 10, 11, 15];
+
+//console.log(merge(a1, a2));
+
 //QUESTION 9 Remove characters
-function removeChars(string){
-  // const vowels = ('a' || 'e');
-  
-  // let newString = '';
-  // for(let i = 0; i < string.length; i++ ){
-  //   if(string[i] !== vowels){
-  //     newString = newString.concat(string[i]);
-  //   }
-  // }
+function removeVowels(string){  
+  let newString = '';
+  for(let i=0; i<string.length; i++ ){
+    if(string[i] !== 'a' && 'e' && 'i' && 'o' && 'u'){
+      newString = newString.concat(string[i]);
+    }
+  }
+  return newString;
+}
+console.log(removeVowels('Mary had a little lamb'));
+
+
+//VERSION 2
+function removeChars(string){  
   let newString = string.replace(/a/g, '').replace(/e/g, '').replace(/i/g, '').replace(/o/g, '').replace(/u/g, '');
   return newString;
 }
